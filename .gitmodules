@@ -1,0 +1,10 @@
+[submodule "include/sputnik"]
+	path = include/sputnik
+	url = https://github.com/google-research/sputnik.git
+[submodule "end2end/sten"]
+	path = end2end/sten
+	url = https://github.com/spcl/sten.git
+
+[submodule "include/CLASP"]
+	path = include/CLASP
+	url = https://github.com/UDC-GAC/CLASP.git

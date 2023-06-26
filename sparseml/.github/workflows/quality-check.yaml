@@ -1,0 +1,31 @@
+name: Quality Checks
+on: 
+  push:
+    branches:
+      - main
+      - 'release/*'
+  pull_request:
+    branches:
+      - main
+      - 'release/*'
+jobs:
+  quality-check:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          repository: "neuralmagic/sparsezoo"
+          path: "sparsezoo"
+          ref: ${{needs.test-setup.outputs.branch}}
+      - name: "⚙️ Install sparsezoo dependencies"
+        run: pip3 install sparsezoo/
+      - name: "Clean sparsezoo directory"
+        run: rm -r sparsezoo/
+      - name: "⚙️ Install dependencies"
+        run: pip3 install .[dev]
+      - name: "🧹 Running quality checks"
+        run: make quality

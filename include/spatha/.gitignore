@@ -1,0 +1,7 @@
+build
+*.o
+*.d
+*.a
+*.out
+libcusparse_lt
+.vscode
