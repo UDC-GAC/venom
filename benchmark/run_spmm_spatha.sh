@@ -43,7 +43,7 @@ shapes="
 #4096,1024,8192 \
 #1024,4096,8192"
 
-mkdir build && cd build
+mkdir -p build && cd build
 make clean
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUDA_ARCHS="86" -DBASELINE=OFF -DIDEAL_KERNEL=OFF -DOUT_32B=OFF && make -j 16
 

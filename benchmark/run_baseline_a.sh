@@ -26,7 +26,7 @@ shapes="
 768,11520,4096 \
 768,12288,4096"
 
-mkdir build && cd build
+mkdir -p build && cd build
 make clean
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUDA_ARCHS="86" -DBASELINE=OFF -DIDEAL_KERNEL=OFF -DOUT_32B=OFF && make -j 16
 

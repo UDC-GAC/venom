@@ -31,7 +31,7 @@ cfgs_min1="
 32,64,32,32,64,32,16,8,32,3 \
 32,64,32,32,64,32,16,8,32,4"
 
-mkdir build && cd build
+mkdir -p build && cd build
 make clean
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUDA_ARCHS="86" -DBASELINE=OFF -DIDEAL_KERNEL=OFF -DOUT_32B=ON && make -j 16
 
