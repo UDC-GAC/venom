@@ -150,7 +150,9 @@ Setup environments:
 conda create -y --name end2end
 conda activate end2end
 conda install pytorch cudatoolkit torchvision torchaudio pytorch-cuda==11.7 -c pytorch -c nvidia
-pip install pybind11 matplotlib pandas seaborn
+pip install pybind11 matplotlib pandas seaborn shapely holoviews
+cd end2end/sten
+pip install .
 conda deactivate
 ```
 ```bash

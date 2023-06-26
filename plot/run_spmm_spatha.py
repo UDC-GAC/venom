@@ -69,9 +69,9 @@ for bs in cols2:
         print(a1)
 
         a2 = a1.groupby(by=["sparsity"])
-        b = a2.mean()
+        b = a2["speedup"].mean()
         #b = a1.median()
-        y1 = b['speedup']
+        y1 = b
 
         ax.set_yscale('log')
 
@@ -139,9 +139,9 @@ for bs in cols2:
         print(a1)
 
         a2 = a1.groupby(by=["sparsity"])
-        b = a2.mean()
+        b = a2["speedup"].mean()
         #b = a1.median()
-        y1 = b['speedup']
+        y1 = b
 
         ax.set_yscale('log')
 
@@ -209,9 +209,9 @@ for bs in cols2:
         print(a1)
 
         a2 = a1.groupby(by=["sparsity"])
-        b = a2.mean()
+        b = a2["speedup"].mean()
         #b = a1.median()
-        y1 = b['speedup']
+        y1 = b
 
         ax.set_yscale('log')
 
@@ -279,9 +279,9 @@ for bs in cols2:
         print(a1)
 
         a2 = a1.groupby(by=["sparsity"])
-        b = a2.mean()
+        b = a2["speedup"].mean()
         #b = a1.median()
-        y1 = b['speedup']
+        y1 = b
 
         ax.set_yscale('log')
 

@@ -56,7 +56,7 @@ RUN bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 run rm -rf ~/miniconda3/miniconda.sh
 RUN ~/miniconda3/bin/conda init bash
 ENV PATH=/root/miniconda3/bin:$PATH
-RUN python -m pip install numpy matplotlib seaborn pandas shapely
+RUN python -m pip install numpy matplotlib seaborn pandas shapely holoviews
 
 # create end2end venv
 RUN conda create -y --name end2end
