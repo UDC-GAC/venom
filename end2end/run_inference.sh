@@ -1,7 +1,7 @@
 #! /bin/bash
 
-mkdir -p /projects/venom_artifact/result
-log_file=/projects/venom_artifact/result/inference.csv
+mkdir -p /projects/venom/result
+log_file=/projects/venom/result/inference.csv
 
 cd end2end
 

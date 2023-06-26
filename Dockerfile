@@ -31,8 +31,8 @@ RUN ls $CUSPARSELT_DIR
 ENV LD_LIBRARY_PATH=${CUSPARSELT_DIR}/lib64:${LD_LIBRARY_PATH}
 
 # Build venom
-RUN git clone --recurse-submodules https://github.com/LopezCastroRoberto/venom_artifact.git
-#WORKDIR /projects/venom_artifact
+RUN git clone --recurse-submodules https://github.com/UDC-GAC/venom.git
+#WORKDIR /projects/venom
 #RUN mkdir build
 #WORKDIR build
 #RUN cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUDA_ARCHS="86" && make -j 16
@@ -66,11 +66,11 @@ RUN pip install pybind11
 RUN pip install matplotlib shapely holoviews
 RUN pip install pandas
 RUN pip install seaborn
-WORKDIR /projects/venom_artifact/end2end/sten
+WORKDIR /projects/venom/end2end/sten
 RUN pip install .
 
 # create sparseml venv
-WORKDIR /projects/venom_artifact/sparseml
+WORKDIR /projects/venom/sparseml
 RUN conda env create -f sparseml.yml
 SHELL ["conda", "run", "-n", "sparseml_artf", "/bin/bash", "-c"]
 RUN python3.10 -m pip install -e .

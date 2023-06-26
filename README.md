@@ -9,14 +9,14 @@ The V:N:M (VENOM) format enables the execution of arbitrary N:M ratios on SPTCs,
 ## Step 1: Download and run the container
 ### Option 1: download an already-built docker image
 ```bash
-wget
+wget https://zenodo.org/record/...
 docker load -i venom_container.tar.gz
 docker run -it –-gpus all venom_container
 ```
 
 ### Option 2: build the container from scratch
 ```bash
-git clone --recurse-submodules git@github.com:LopezCastroRoberto/venom_artifact.git && cd venom_artifact
+git clone --recurse-submodules git@github.com:UDC-GAC/venom.git && cd venom
 docker build -t venom_container .
 docker run -it --gpus all --name <your_container_name> venom_container
 ```
@@ -27,7 +27,7 @@ Compilation is already inlined in the scripts provided, so you can jump directly
 
 Build and install the centralized benchmarking tool:
 ```bash
-cd /projects/venom_artifact/
+cd /projects/venom/
 mkdir build && cd build
 # about 1 minute
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCUDA_ARCHS="86" -DBASELINE=OFF -DIDEAL_KERNEL=OFF -DOUT_32B=OFF && make -j 16
@@ -53,7 +53,7 @@ cd end2end
 
 (1) To reproduce the results on Fig 9
 ```bash
-cd /projects/venom_artifact/
+cd /projects/venom/
 
 # about 1 hour
 ./benchmark/run_ablation1.sh
@@ -64,7 +64,7 @@ python plot/run_ablation1.py
 (2) To reproduce the results on Fig 10
 
 ```bash
-cd /projects/venom_artifact/
+cd /projects/venom/
 
 # about 5 minutes
 ./benchmark/run_ablation2.sh
@@ -75,7 +75,7 @@ python plot/run_ablation2.py
 (3) To reproduce the results on Fig 12
 
 ```bash
-cd /projects/venom_artifact/
+cd /projects/venom/
 
 # about 20 minutes
 ./benchmark/run_baseline_a.sh
@@ -88,7 +88,7 @@ python plot/run_baseline_b.py
 (4) To reproduce the results on Fig 13
 
 ```bash
-cd /projects/venom_artifact/
+cd /projects/venom/
 
 # about 2 hours
 ./benchmark/run_spmm_spatha.sh
@@ -135,14 +135,14 @@ python3.10 -m torch.distributed.launch --nproc_per_node=3 src/sparseml/transform
 
 ## Step 3: check plots
 ```bash
-cd /projects/venom_artifact/result
+cd /projects/venom/result
 scp *.pdf username@hostmachine:/host/path/target
 ```
 
 # Reproduction with source code
 ## Step 1: Prepare code and setup python environments
 ```bash
-git clone --recurse-submodules git@github.com:LopezCastroRoberto/venom_artifact.git && cd venom_artifact
+git clone --recurse-submodules git@github.com:UDC-GAC/venom.git && cd venom
 ```
 
 Setup environments:
@@ -163,7 +163,7 @@ python3.10 -m pip install https://github.com/neuralmagic/transformers/releases/d
 conda deactivate
 ```
 
-## Step 2&3: Suppose the source code is in the path ```/projects/venom_artifact```. Then, follow the same ```Step 2&3``` instructions as described for docker containers
+## Step 2&3: Suppose the source code is in the path ```/projects/venom```. Then, follow the same ```Step 2&3``` instructions as described for docker containers
 
 # How to use. Examples:
 

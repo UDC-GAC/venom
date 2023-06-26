@@ -2,8 +2,8 @@
 
 #! /bin/bash
 
-mkdir -p /projects/venom_artifact/result
-log_file=/projects/venom_artifact/result/ablation1.csv
+mkdir -p /projects/venom/result
+log_file=/projects/venom/result/ablation1.csv
 
 echo "benchmark.gemm.nm"
 
