@@ -115,6 +115,7 @@ python3 benchmark/energy.py
 (7) Since reproducing results on Table 2 can take a significant amount of time, we provide three different scripts to alleviate this process
 ```bash
 conda activate sparseml_artf
+cd sparseml
 # Script that contains a subset of the experiments with the most aggressive configurations using the pair-wise version of the sparsifier
 # about 4 days
 ./sparseml_SS1.sh
