@@ -9,7 +9,7 @@ The V:N:M (VENOM) format enables the execution of arbitrary N:M ratios on SPTCs,
 ## Step 1: Download and run the container
 ### Option 1: download an already-built docker image
 ```bash
-wget https://zenodo.org/record/...
+wget https://zenodo.org/record/8084447/files/venom_container.tar.gz
 docker load -i venom_container.tar.gz
 docker run -it –-gpus all venom_container
 ```
