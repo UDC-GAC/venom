@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.5.1-devel-ubuntu20.04
+FROM nvidia/cuda:11.5.2-devel-ubuntu20.04
 
 MAINTAINER robertolopezcastro <roberto.lopez.castro@udc.es>
 
