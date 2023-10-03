@@ -1,10 +1,11 @@
-<!--[![DOI]()]()-->
-
 # VENOM: A Vectorized N:M Format for Unleashing the Power of Sparse Tensor Cores
 
-<p align="left"><img align="center" width="140" src="venom.png"/></p>
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8084447.svg)](https://doi.org/10.5281/zenodo.8084447)
 
-The V:N:M (VENOM) format enables the execution of arbitrary N:M ratios on SPTCs, which natively only support 2:4 patterns (50% sparsity). To efficiently exploit VENOM, we propose Spatha, a high-performance sparse-library for DL routines. We ran all the experiments on NVIDIA RTX 3090 GPU. The software requirements to reproduce the artifact are: CUDA Toolkit 11.5 or 11.7, cuSparseLt v.0.3.0, Python 3.10, PyTorch 1.13.1 and cmake 3.16.3.
+The V:N:M (VENOM) format enables the execution of arbitrary N:M ratios on SPTCs, which natively only support 2:4 patterns (50% sparsity). To efficiently exploit VENOM, we propose **Spatha** 🗡️, a high-performance sparse-library for DL routines. We ran all the experiments on NVIDIA RTX 3090 GPU. The software requirements to reproduce the artifact are: CUDA Toolkit 11.5 or 11.7, cuSparseLt v.0.3.0, Python 3.10, PyTorch 1.13.1 and cmake 3.16.3.
+
+<p align="center"><img align="center" width="280" src="logo.jpeg"/></p>
+
 # Reproduction with container
 ## Step 1: Download and run the container
 ### Option 1: download an already-built docker image
@@ -170,7 +171,7 @@ conda deactivate
 
 # How to use. Examples:
 
-## Spatha
+## Spatha 🗡️
 ```
 ./src/benchmark_spmm --sparsity-type n-to-m --spmm spatha --gemm cuBlas --precision half --meta-block-size 32 --block-size 4 --nn_row 2 --mm_row 8 --m 1024 --k 4096 --n 4096 --d 0.5 --bm 128 --bn 64 --bk 32 --wm 32 --wn 64 --wk 32 --mm 16 --mn 8 --mk 32 --nstage 2 --random --check
 ```
@@ -186,6 +187,22 @@ conda deactivate
 ```
 ./src/benchmark_spmm --sparsity-type cvs --spmm CLASP --gemm cuBlas --precision half --block-size 16 --m 1024 --k 256 --n 256 --d 0.2 --check
 ```
+
+## Publication
+
+VENOM is published in SC'23. To cite our work:
+```bibtex
+@inproceedings{castroR2023venom,
+  author = {Roberto L. Castro, Andrei Ivanov, Diego Andrade, Tal Ben-Nun, Basilio B. Fraguela, and Torsten Hoefler},
+  title = {VENOM: A Vectorized N:M Format for Unleashing the Power of Sparse Tensor Cores},
+  booktitle = {Proceedings of the International Conference on High Performance Computing, Networking, Storage and Analysis (SC'23)},
+  location = {Denver, CO},
+  publisher = {IEEE Press},
+  series = {SC'23},
+  year = {2023}
+}
+```
+
 ## License
 Apache-2.0 License
 
