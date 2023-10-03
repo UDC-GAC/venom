@@ -4,8 +4,6 @@
 
 The V:N:M (VENOM) format enables the execution of arbitrary N:M ratios on SPTCs, which natively only support 2:4 patterns (50% sparsity). To efficiently exploit VENOM, we propose **Spatha** 🗡️, a high-performance sparse-library for DL routines. We ran all the experiments on NVIDIA RTX 3090 GPU. The software requirements to reproduce the artifact are: CUDA Toolkit 11.5 or 11.7, cuSparseLt v.0.3.0, Python 3.10, PyTorch 1.13.1 and cmake 3.16.3.
 
-<p align="center"><img align="center" width="280" src="logo.jpeg"/></p>
-
 # Reproduction with container
 ## Step 1: Download and run the container
 ### Option 1: download an already-built docker image
