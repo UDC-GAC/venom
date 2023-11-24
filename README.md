@@ -190,14 +190,19 @@ conda deactivate
 
 VENOM is published in SC'23. To cite our work:
 ```bibtex
-@inproceedings{castroR2023venom,
-  author = {Roberto L. Castro, Andrei Ivanov, Diego Andrade, Tal Ben-Nun, Basilio B. Fraguela, and Torsten Hoefler},
-  title = {VENOM: A Vectorized N:M Format for Unleashing the Power of Sparse Tensor Cores},
-  booktitle = {Proceedings of the International Conference on High Performance Computing, Networking, Storage and Analysis (SC'23)},
-  location = {Denver, CO},
-  publisher = {IEEE Press},
-  series = {SC'23},
-  year = {2023}
+@inproceedings{10.1145/3581784.3607087,
+author = {Castro, Roberto L. and Ivanov, Andrei and Andrade, Diego and Ben-Nun, Tal and Fraguela, Basilio B. and Hoefler, Torsten},
+title = {VENOM: A Vectorized N:M Format for Unleashing the Power of Sparse Tensor Cores},
+year = {2023},
+isbn = {9798400701092},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+doi = {10.1145/3581784.3607087},
+booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+articleno = {72},
+numpages = {14},
+location = {Denver, CO, USA},
+series = {SC '23}
 }
 ```
 
